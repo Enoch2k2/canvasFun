@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CanvasFun</title>
+  </head>
+  <body style="margin: 0;">
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script>
+      var canvas = document.getElementById("canvas");
+      var c = canvas.getContext("2d")
+      var x = -50, y = -50, height = 10, width = 10;
+      var angle = 0;
+      const CANVAS_WIDTH = 600;
+
+
+      function mover(){
+        c.clearRect(x,y, height,width);
+        if(x >= CANVAS_WIDTH){
+          x = -50;
+          y = -50;
+        } else {
+          x += 1;
+          y += 1;
+        }
+
+        c.fillRect(x,y,height,width);
+      }
+
+      setInterval(mover, 0.1)
+
+    </script>
+  </body>
+</html>
